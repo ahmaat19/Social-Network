@@ -28,7 +28,9 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, password } = req.body;
+    const name = req.body.name;
+    const email = req.body.email.toLowerCase();
+    const password = req.body.password;
 
     try {
       // See if user exist
